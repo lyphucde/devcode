@@ -1,5 +1,5 @@
-<?php include('config.php');?>
-<?php 
+<?html include('config.html');?>
+<?html 
 $check_bug = random('QWERTYUIOPASDFGHJKLZXCVBNM123456789', '4');
 ?>
 <!DOCTYPE html>
@@ -147,7 +147,7 @@ $check_bug = random('QWERTYUIOPASDFGHJKLZXCVBNM123456789', '4');
             <div class="container">
                 <div id="hotline"><i class="fas fa-phone"></i>Hotline: <a
                         href="tel:<?=$site_hotline;?>"><?=$site_hotline;?></a></div>
-                <?php if (!isset($_SESSION['username'])) { ?>
+                <?html if (!isset($_SESSION['username'])) { ?>
                 <div id="user-area">
                     <ul>
                         <li>
@@ -160,7 +160,7 @@ $check_bug = random('QWERTYUIOPASDFGHJKLZXCVBNM123456789', '4');
                         </li>
                     </ul>
                 </div>
-                <?php } else { ?>
+                <?html } else { ?>
                 <div id="user-area">
                     <span class="user">
                         <a href="#"><i class="fas fa-user"></i> <?=$my_username;?> (<span
@@ -168,11 +168,11 @@ $check_bug = random('QWERTYUIOPASDFGHJKLZXCVBNM123456789', '4');
                                 class="fa fa-angle-down"></i></a><br />
 
                         <div class="dropdown-content">
-                            <?php if ($my_level == 'admin') { ?>
+                            <?html if ($my_level == 'admin') { ?>
                             <a href="/admin/">
                                 <i class="fa fas fa-check-square"></i> PANEL ADMIN
                             </a>
-                            <?php }?>
+                            <?html }?>
                             <a href="/thong-tin/">
                                 <i class="fa fas fa-user-circle"></i> THÔNG TIN TÀI KHOẢN
                             </a>
@@ -192,7 +192,7 @@ $check_bug = random('QWERTYUIOPASDFGHJKLZXCVBNM123456789', '4');
                         </div>
                     </span>
                 </div>
-                <?php }?>
+                <?html }?>
 
             </div>
         </div>
@@ -405,14 +405,14 @@ $check_bug = random('QWERTYUIOPASDFGHJKLZXCVBNM123456789', '4');
 
 
 
-        <?php
+        <?html
     if (isset($_POST["btn_dangky"]))
     {
         
-        $username = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<php'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['username']))));
-        $matkhau = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<php'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['matkhau']))));
-        $email = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<php'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['email']))));
-        $nhaplaimatkhau = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<php'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['nhaplaimatkhau']))));
+        $username = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<html'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['username']))));
+        $matkhau = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<html'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['matkhau']))));
+        $email = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<html'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['email']))));
+        $nhaplaimatkhau = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<html'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['nhaplaimatkhau']))));
         $nhaplaimatkhau = md5($nhaplaimatkhau);
         $matkhau = md5($matkhau);
         $sdt_length = strlen($username);
@@ -481,12 +481,12 @@ $check_bug = random('QWERTYUIOPASDFGHJKLZXCVBNM123456789', '4');
 ?>
 
 
-        <?php
+        <?html
 
 if (isset($_POST["dangnhap"]))
 {
-    $username = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<php'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['username']))));
-    $password = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<php'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['password']))));
+    $username = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<html'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['username']))));
+    $password = str_replace(array('<',"'",'>','?','/',"\\",'--','eval(','<html'),array('','','','','','','','',''),htmlspecialchars(addslashes(strip_tags($_POST['password']))));
     $password = md5($password);
     if ($username == "" || $password =="") 
     {
@@ -546,4 +546,5 @@ if(isset($_SESSION['username']))
                 $("#auto_vnd").load(window.location.href + " #auto_vnd");
             }, 3000);
         });
+
         </script>
